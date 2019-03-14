@@ -1,0 +1,40 @@
+#include "valueDefine.h"
+
+const char* midCodefileName = "midCode.txt";
+const char* opmidCodefileName = "opmidCode.txt";
+const char* mipsCodefileName = "mipsCode.txt";
+const char* tempreg[10] = { "$t0","$t1", "$t2", "$t3", "$t4", "$t5", "$t6", "$t7", "$t8", "$t9"};
+
+char Space[] = " ";
+char Const[] = "const";
+char Var[] = "var";
+char Array[] = "array";
+char Int[] = "int";
+char Char[] = "char";
+char Void[] = "void";
+char Assign[] = "=";
+char Assarr[] = "[]=";
+char Func[] = "func";
+char Funcend[] = "funcend";
+char Para[] = "para";
+char ParaCall[] = "paracall";
+char Call[] = "call";
+char Beq[] = "beq";
+char Bgez[] = "Bgez";
+char Bgtz[] = "bgtz";
+char Blez[] = "blez";
+char Bltz[] = "bltz";
+char Bne[] = "bne";
+char Add[] = "+";
+char Sub[] = "-";
+char Mul[] = "*";
+char Div[] = "/";
+char Jmp[] = "jmp";
+char Lab[] = "lab:";
+char Ret[] = "ret";
+char Scanf[] = "scanf";
+char Printf[] = "printf";
+char Exit[] = "exit";
+char Main[] = "main";
+char Zero[] = "0";
+char None[] = "no";

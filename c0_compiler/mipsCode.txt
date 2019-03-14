@@ -1,0 +1,156 @@
+.data
+	STRING_0:.asciiz "true_if!"
+	STRING_1:.asciiz "true_while!"
+.text
+
+j	main
+add_1:
+addiu	$sp, $sp, -4
+sw	$ra, 0($sp)
+subiu	$sp, $sp, 4
+move	$s0, $a0
+move	$v0, $s0
+li	$v1, 1
+addu	$v0, $v0, $v1
+move	$t0, $v0
+sw	$t0, 268521472
+addiu	$sp, $sp, 4
+lw	$ra, 0($sp)
+addiu	$sp, $sp, 4
+lw	$fp, 0($sp)
+addiu	$sp, $sp, 4
+jr	$ra
+mul_2:
+addiu	$sp, $sp, -4
+sw	$ra, 0($sp)
+subiu	$sp, $sp, 4
+move	$s0, $a0
+move	$v0, $s0
+li	$v1, 2
+mult	$v0, $v1
+mflo	$v0
+move	$t0, $v0
+sw	$t0, 268521472
+addiu	$sp, $sp, 4
+lw	$ra, 0($sp)
+addiu	$sp, $sp, 4
+lw	$fp, 0($sp)
+addiu	$sp, $sp, 4
+jr	$ra
+main:
+li	$fp, 268521476
+addiu	$sp, $sp, -4
+li	$s0, 1
+move	$a0, $s0
+sw	$s0, 0($sp)
+addiu	$sp, $sp, -4
+sw	$fp, 0($sp)
+addiu	$fp, $fp, 0
+jal	add_1
+lw	$s0, 0($sp)
+lw	$t0, 268521472
+move	$a0, $s0
+sw	$s0, 0($sp)
+sw	$t0, 0($fp)
+addiu	$sp, $sp, -4
+sw	$fp, 0($sp)
+addiu	$fp, $fp, 4
+jal	mul_2
+lw	$s0, 0($sp)
+lw	$t0, 0($fp)
+lw	$t1, 268521472
+move	$v0, $t0
+move	$v1, $t1
+addu	$v0, $v0, $v1
+move	$t2, $v0
+move	$a0, $t2
+sw	$s0, 0($sp)
+addiu	$sp, $sp, -4
+sw	$fp, 0($sp)
+addiu	$fp, $fp, 12
+jal	add_1
+lw	$s0, 0($sp)
+lw	$t3, 268521472
+move	$a0, $s0
+sw	$s0, 0($sp)
+sw	$t3, 12($fp)
+addiu	$sp, $sp, -4
+sw	$fp, 0($sp)
+addiu	$fp, $fp, 16
+jal	add_1
+lw	$s0, 0($sp)
+lw	$t3, 12($fp)
+lw	$t4, 268521472
+move	$a0, $s0
+sw	$s0, 0($sp)
+sw	$t4, 16($fp)
+sw	$t3, 12($fp)
+addiu	$sp, $sp, -4
+sw	$fp, 0($sp)
+addiu	$fp, $fp, 20
+jal	mul_2
+lw	$s0, 0($sp)
+lw	$t4, 16($fp)
+lw	$t3, 12($fp)
+lw	$t5, 268521472
+move	$v0, $t4
+move	$v1, $t5
+addu	$v0, $v0, $v1
+move	$t6, $v0
+move	$a0, $t6
+sw	$s0, 0($sp)
+sw	$t3, 12($fp)
+addiu	$sp, $sp, -4
+sw	$fp, 0($sp)
+addiu	$fp, $fp, 28
+jal	mul_2
+lw	$s0, 0($sp)
+lw	$t3, 12($fp)
+lw	$t7, 268521472
+move	$v0, $t3
+move	$v1, $t7
+addu	$v0, $v0, $v1
+move	$t8, $v0
+move	$a0, $t8
+sw	$s0, 0($sp)
+addiu	$sp, $sp, -4
+sw	$fp, 0($sp)
+addiu	$fp, $fp, 36
+jal	add_1
+lw	$s0, 0($sp)
+lw	$t9, 268521472
+move	$a0, $t9
+sw	$s0, 0($sp)
+addiu	$sp, $sp, -4
+sw	$fp, 0($sp)
+addiu	$fp, $fp, 40
+jal	mul_2
+lw	$s0, 0($sp)
+sw	$t0, 0($fp)
+lw	$t0, 268521472
+move	$a0, $t0
+li	$v0, 1
+syscall
+li	$v0, x
+beq	$v0, $0, LABLE_0
+la	$a0, STRING_0
+li	$v0, 4
+syscall
+j	LABLE_1
+LABLE_0:
+LABLE_1:
+LABLE_2:
+li	$v0, x
+beq	$v0, $0, LABLE_3
+la	$a0, STRING_1
+li	$v0, 4
+syscall
+move	$v0, $s0
+li	$v1, 1
+subu	$v0, $v0, $v1
+move	$t0, $v0
+move	$s0, $t0
+j	LABLE_2
+LABLE_3:
+li	$v0, 10
+syscall

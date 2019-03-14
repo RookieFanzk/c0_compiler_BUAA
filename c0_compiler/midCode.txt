@@ -1,0 +1,47 @@
+func	int	 	add_1
+para	int	 	x
++	x	1	VAR_0
+ret	 	 	VAR_0
+funcend	 	 	add_1
+func	int	 	mul_2
+para	int	 	x
+*	x	2	VAR_0
+ret	 	 	VAR_0
+funcend	 	 	mul_2
+func	 	 	main
+var	int	 	x
+=	1	 	x
+paracall	 	 	x
+call	add_1	 	VAR_0
+paracall	 	 	x
+call	mul_2	 	VAR_1
++	VAR_0	VAR_1	VAR_2
+paracall	 	 	VAR_2
+call	add_1	 	VAR_3
+paracall	 	 	x
+call	add_1	 	VAR_4
+paracall	 	 	x
+call	mul_2	 	VAR_5
++	VAR_4	VAR_5	VAR_6
+paracall	 	 	VAR_6
+call	mul_2	 	VAR_7
++	VAR_3	VAR_7	VAR_8
+paracall	 	 	VAR_8
+call	add_1	 	VAR_9
+paracall	 	 	VAR_9
+call	mul_2	 	VAR_10
+printf	no	VAR_10	int
+beq	x	0	LABLE_0
+printf	true_if!	 	int
+jmp	 	 	LABLE_1
+lab:	 	 	LABLE_0
+lab:	 	 	LABLE_1
+lab:	 	 	LABLE_2
+beq	x	0	LABLE_3
+printf	true_while!	 	int
+-	x	1	VAR_11
+=	VAR_11	 	x
+jmp	 	 	LABLE_2
+lab:	 	 	LABLE_3
+exit	 	 	 
+funcend	 	 	main
