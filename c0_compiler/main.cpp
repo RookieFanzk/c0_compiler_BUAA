@@ -6,9 +6,7 @@ int main()
 	printf("Please input the path of the txt file:\n");
 	scanf("%s", filepath);
 	readfile(filepath);
-
 	compileBegin();
-
 	printf("FINISH!\n");
 	return 0;
 }
